@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Deltarune Portal</title>
+    <style>
+        @font-face {
+            font-family: deltarune;
+            src: url("/font/deltarune.ttf");
+        }
+        body
+        {
+            background-color: black;
+            font-family: deltarune, serif;
+            text-align: center;
+            font-size: 50px;
+            color: white;
+        }
+        input[type="file"]::file-selector-button {
+            background-color: gray;
+            font-family: deltarune, serif;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+<h1>Deltarune Portal</h1>
+<p>Welcome to the rune, <%= username%></p>
+<form action="/dash/upload" method="post" enctype="multipart/form-data">
+    <input type="file" name="file">
+    <input type="submit" value="Upload">
+</form>
+<p><%=message%></p>
+
+<p></p>
+</body>
+</html>

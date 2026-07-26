@@ -1,0 +1,44 @@
+<head>
+    <title>An error has occurred: <%= error.status%></title>
+    <style>
+        @font-face {
+            font-family: deltarune;
+            src: url("/font/deltarune.ttf");
+        }
+        body
+        {
+            background-color: black;
+            color: white;
+            font-family: deltarune, serif;
+            text-align: center;
+            font-size: 25px;
+        }
+        .button
+        {
+            font-family: deltarune, serif;
+            color: black;
+            font-size: 25px;
+            background-color: white;
+            text-decoration-color: white;
+            padding: 15px;
+            cursor: grab;
+        }
+    </style>
+</head>
+<h1>An error has occurred!</h1>
+<h2 style="color: red;"><%= error.status %> <%= message %></h2>
+<input type="button" class="button" onclick="toggleFullError()" value="Show full error">
+<pre style="font-family: deltarune, serif; display: none" id="error"><%= error.stack %></pre>
+
+
+<script>
+    function toggleFullError()
+    {
+        var x = document.getElementById("error");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
+</script>

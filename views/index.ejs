@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Deltarune Portal</title>
+    <style>
+      @font-face {
+        font-family: deltarune;
+        src: url("/font/deltarune.ttf");
+      }
+      body
+      {
+        background-color: white;
+        font-family: deltarune, serif;
+        text-align: center;
+        font-size: 50px;
+      }
+      .button
+      {
+        font-family: deltarune, serif;
+        color: black;
+        font-size: 25px;
+        background-color: white;
+        text-decoration-color: white;
+        padding: 15px;
+        cursor: grab;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Deltarune Portal</h1>
+    <p>Welcome to the 'rune</p>
+    <form id="login" action="/dash/login">
+      Character Name: <input type="text" name="name"><br>
+      Password: <input type="password" name="password"><br><br>
+      <input type="button" class="button" onclick="login()" value="Submit">
+    </form>
+    <img id="lancer" src="/images/deltarune.gif" style="visibility: hidden;" alt="Characters"/>
+
+    <script>
+      async function sleep(ms)
+      {
+        return new Promise((resolve)=>setTimeout(resolve, ms));
+      }
+      async function login() {
+        document.getElementById("login").style.display="none";
+        document.getElementById("lancer").style.visibility="visible";
+
+        await sleep(250);
+        document.getElementById("login").submit();
+
+      }
+    </script>
+  <p></p>
+  </body>
+</html>
