@@ -107,7 +107,7 @@ async function logDc(message)
 {
     try{
         let color = "255"
-        const post = await fetch("https://discord.com/api/webhooks/1531040970689351720/i_EgnOB7kKYEG_Bk2GYfG3NWwB-O1I2njBdOBuyhiGSCj3_l6EAJO4M_wzTMGODRiJ50", {
+        const post = await fetch(webhook, {
             method: "POST",
             headers:{
 
