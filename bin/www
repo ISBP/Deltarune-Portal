@@ -4,8 +4,10 @@
  * Module dependencies.
  */
 
+var path = require('node:path');
+require('dotenv').config({ path: path.resolve(__dirname, '../.env') });
 var app = require('../app');
-var debug = require('debug')('untitled:server');
+var debug = require('debug')('z:server');
 var http = require('http');
 
 /**
