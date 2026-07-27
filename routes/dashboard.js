@@ -36,7 +36,6 @@ router.get('/', function(req, res, next) {
     try{
 
         let token = req.cookies.login;
-        console.log(token)
         const data = jwt.verify(token, jwtToken);
         res.render("portal", {username: data, message: ""
         })
