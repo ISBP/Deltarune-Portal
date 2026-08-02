@@ -79,8 +79,8 @@ router.post("/upload", upload.single("file"), async (req, res) => {
         return res.status(403);
     }
     if (!file) return res.status(400).json({ message: "No file uploaded" });
-    let URLName = `${name}-${Date.now()}-voicenote-${file.originalname}`
-    URLName = URLName.replace(" ", "-");
+    let URLName = `audio-clip/${name}-${Date.now()}-${file.originalname}`
+    URLName = URLName.replaceAll(" ", "-");
     const params = {
         Bucket: "deltarune-portal",
         Key: URLName,
